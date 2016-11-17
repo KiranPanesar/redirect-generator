@@ -1,0 +1,29 @@
+<html>
+<script src="mobile-detect.min.js"></script>
+<script>
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var md = new MobileDetect(window.navigator.userAgent);
+
+    ios_url = getParameterByName("ios")
+    android_url = getParameterByName("ios")
+
+    if (md.os == "iOS") {
+      window.location.replace(ios_url);
+    } else {
+      window.location.replace(android_url);
+    }
+
+</script>
+
+</html>
