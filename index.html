@@ -21,12 +21,10 @@
     console.log("ios = " + ios_url);
     console.log("andoird = " + android_url);
 
-    alert(md);
-    
     if (md.is("iOS")) {
-      window.location.replace("http://google.com");
+      window.location.replace(ios_url);
     } else {
-      // window.location.replace(android_url);
+      window.location.replace(android_url);
     }
 
 </script>
