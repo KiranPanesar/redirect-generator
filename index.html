@@ -15,8 +15,8 @@
 
     var md = new MobileDetect(window.navigator.userAgent);
 
-    ios_url = getParameterByName("ios")
-    android_url = getParameterByName("android")
+    ios_url = window.atob(getParameterByName("ios"));
+    android_url = window.atob(getParameterByName("android");
 
     console.log("ios = " + ios_url)
     console.log("andoird = " + android_url)
@@ -24,8 +24,7 @@
     if (md.os == "iOS") {
       window.location.replace(ios_url);
     } else {
-      console.log("Navigating to " + "http://" + android_url + ".com")
-      window.location.replace("http://" + android_url + ".com");
+      window.location.replace(android_url);
     }
 
 </script>
