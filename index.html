@@ -1,32 +1,23 @@
-<html>
-<script src="mobile-detect.min.js"></script>
-<script>
-    function getParameterByName(name, url) {
-        if (!url) {
-          url = window.location.href;
-        }
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+<!doctype html>
 
-    var md = new MobileDetect(window.navigator.userAgent);
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pairade Redirect Generator</title>
+  <script src="script.js"></script>
 
-    ios_url = window.atob(getParameterByName("ios"));
-    android_url = window.atob(getParameterByName("android"));
+  <style type="text/css">
+  input {
+  	width: 60%;
+  	font-family: sans-serif;
+  	font-size: 30px;
+  }
+  </style>
+</head>
 
-    console.log("ios = " + ios_url);
-    console.log("andoird = " + android_url);
-
-    if (md.is("iOS")) {
-      window.location.replace(ios_url);
-    } else {
-      window.location.replace(android_url);
-    }
-
-</script>
-
+<body>
+  <input type="text" id="ios_url" placeholder="URL for iOS devices"><br>
+  <input type="text" id="android_url" placeholder="URL for Android and all other devices"><br><br>
+  <input type="text" id="redirect_link" placeholder="RedirectLink" onClick="this.select();" readonly><br>
+</body>
 </html>
