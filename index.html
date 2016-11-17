@@ -18,9 +18,13 @@
     ios_url = getParameterByName("ios")
     android_url = getParameterByName("android")
 
+    console.log("ios = " + ios_url)
+    console.log("andoird = " + android_url)
+
     if (md.os == "iOS") {
       window.location.replace(ios_url);
     } else {
+      console.log("Navigating to " + android_url)
       window.location.replace(android_url);
     }
 
